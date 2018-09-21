@@ -1,0 +1,16 @@
+.header{
+    background-color: blueviolet;
+    color: antiquewhite;
+    text-align: center;
+    
+    
+  }
+
+.listDiv{
+    background-color: rgb(242, 239, 245);
+    height: '100%';
+    width: '100%';
+}
+.table{
+    width: '100%';
+}
