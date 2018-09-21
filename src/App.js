@@ -9,15 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
-        <div className = 'container'>
-          <div className ='row'>
-            <div className ='col'>
-              <List/>
-            </div>
-            <div className ='col'>
-            </div>
-          </div>
-        </div>
+        <List/>
         
       </div>
     );
