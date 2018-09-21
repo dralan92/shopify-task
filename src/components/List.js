@@ -89,13 +89,17 @@ class List extends Component {
      
       
     return (
-      <div className='listDiv'>
+      <div >
         
         
 
         <div className='container'>
             <div className='row'>
             <div className='col'>
+            <form className="form-inline my-2 my-lg-0">
+                <input className="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search" />
+                <button className="btn btn-outline-success my-2 my-sm-0 header" type="submit">Search</button>
+            </form><br/><br/><br/>
                     <table className = 'table'>
                         
                         <tr>
@@ -107,7 +111,7 @@ class List extends Component {
                       
                     </table>
             </div>
-            <div className='col'>
+            <div className='col listDiv'>
             <table className = 'table'>
                         
                         <tr>
