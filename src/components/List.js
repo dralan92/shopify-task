@@ -33,9 +33,21 @@ class List extends Component {
             document.getElementById(snap.val()[key].name+mod_key).innerHTML = snap.val()[key].name;
             document.getElementById(snap.val()[key].Language+mod_key).innerHTML = snap.val()[key].Language;
             document.getElementById(snap.val()[key].LatestTag+mod_key).innerHTML = snap.val()[key].LatestTag;
+            document.getElementById('remove'+mod_key).innerHTML = 'Remove';
         })
         
         
+    }
+    handleRemoveClick(e){
+        e.preventDefault();
+        let id = e.target.id;
+        let row_to_remove = parseInt(id.split('remove')[1]);
+        console.log('remove'+row_to_remove);
+        document.getElementsByClassName('remove'+row_to_remove)[0].innerHTML = '';
+        document.getElementsByClassName('remove'+row_to_remove)[1].innerHTML = '';
+        document.getElementsByClassName('remove'+row_to_remove)[2].innerHTML = '';
+        document.getElementsByClassName('remove'+row_to_remove)[3].innerHTML = '';
+
     }
        
   render() {
@@ -53,7 +65,7 @@ class List extends Component {
           let name = table_data[k].name;
           let language = table_data[k].Language;
           let latest_tag = table_data[k].LatestTag;
-          
+          let remove = 'remove';
         table_body[i] = 
         
         <tr key={k}>
@@ -65,11 +77,11 @@ class List extends Component {
         
    ;
    table_body_right[i] = 
-        <tr key={k}>
-            <td id ={name + i}></td>
-            <td id ={language + i}></td>
-            <td id ={latest_tag + i}></td>
-            
+        <tr key={k} >
+            <td id ={name + i} className={remove + i}></td>
+            <td id ={language + i} className={remove + i}></td>
+            <td id ={latest_tag + i} className={remove + i}></td>
+            <td id={remove + i} className={remove + i} onClick={this.handleRemoveClick}></td>
             
         </tr>
     ;
